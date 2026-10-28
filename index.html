@@ -28,7 +28,7 @@
   </header>
 
   <main id="main-content">
-    <section class="hero">
+    <section id="welcome" class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">
@@ -222,6 +222,106 @@
         </div>
       </div>
     </section>
+    
+<section
+  id="pathway-selection"
+  class="pathway-selection"
+  aria-labelledby="pathway-title"
+  hidden
+>
+  <div class="section-heading">
+    <p class="eyebrow">YOUR NEXT STEP</p>
+    <h2 id="pathway-title">How would you like to begin?</h2>
+    <p>
+      Choose a starting point. ReproGuide provides educational
+      information and helps you prepare for appropriate healthcare.
+      It does not diagnose conditions or predict fertility.
+    </p>
+  </div>
+  
+<div
+  id="pathway-feedback"
+  class="pathway-feedback"
+  role="status"
+  aria-live="polite"
+></div>
+
+  <div class="pathway-options">
+    <button
+      class="pathway-option"
+      type="button"
+      data-pathway="learn"
+    >
+      <span class="pathway-option-title">
+        Learn about reproductive health
+      </span>
+      <span>
+        Explore general information about male reproductive health.
+      </span>
+    </button>
+
+    <button
+      class="pathway-option"
+      type="button"
+      data-pathway="prepare"
+    >
+      <span class="pathway-option-title">
+        Prepare for a healthcare appointment
+      </span>
+      <span>
+        Organise questions and topics to discuss with a healthcare professional.
+      </span>
+    </button>
+
+    <button
+      class="pathway-option"
+      type="button"
+      data-pathway="checkin"
+    >
+      <span class="pathway-option-title">
+        Begin a guided check-in
+      </span>
+      <span>
+        Answer optional questions to help organise your concerns.
+        This is not a diagnostic assessment.
+      </span>
+    </button>
+  </div>
+
+  <button id="back-to-welcome" class="text-button" type="button">
+    Back to welcome
+  </button>
+</section>
+
+<section
+  id="education-screen"
+  class="education-screen"
+  aria-labelledby="education-title"
+  hidden
+>
+  <div class="section-heading">
+    <p class="eyebrow">LEARN AND UNDERSTAND</p>
+    <h2 id="education-title" tabindex="-1">
+      Male reproductive health
+    </h2>
+    <p>
+      Explore general educational information. These topics do not
+      diagnose conditions or determine an individual's fertility.
+    </p>
+  </div>
+
+  <div id="education-topics" class="education-topics"></div>
+
+  <p class="content-review-notice">
+    Content status: pending clinical review. Please consult a qualified
+    healthcare professional for individual medical concerns.
+  </p>
+
+  <button id="back-to-pathways" class="text-button" type="button">
+    Back to pathways
+  </button>
+</section>
+
   </main>
 
   <footer class="site-footer">
@@ -234,6 +334,8 @@
       <p>Health education for more informed conversations.</p>
       <p class="footer-status">Innovation prototype · Not a medical service</p>
     </div>
-  </footer>
+    </footer>
+
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
