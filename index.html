@@ -294,6 +294,160 @@
 </section>
 
 <section
+  id="appointment-screen"
+  class="appointment-screen"
+  aria-labelledby="appointment-title"
+  hidden
+>
+  <div class="section-heading">
+    <p class="eyebrow">PREPARE FOR YOUR VISIT</p>
+    <h2 id="appointment-title" tabindex="-1">
+      Prepare for a healthcare appointment
+    </h2>
+    <p>
+      Choose the questions you would like to discuss with a
+      qualified healthcare professional. You can select only
+      the topics relevant to you.
+    </p>
+  </div>
+
+  <div class="appointment-privacy-notice">
+    <strong>Your privacy</strong>
+    <p>
+      Your selections remain in this page's current JavaScript
+      session. They are not saved to browser storage or
+      transmitted by this feature.
+    </p>
+  </div>
+
+  <fieldset class="appointment-question-list">
+    <legend>Questions you may wish to ask</legend>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-1"
+        type="checkbox"
+        value="How can I explain my concerns and symptoms clearly?"
+      />
+      <label for="appointment-question-1">
+        How can I explain my concerns and symptoms clearly?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-2"
+        type="checkbox"
+        value="What information about my health history would be useful to discuss?"
+      />
+      <label for="appointment-question-2">
+        What information about my health history would be useful to discuss?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-3"
+        type="checkbox"
+        value="What might be contributing to the concern I have raised?"
+      />
+      <label for="appointment-question-3">
+        What might be contributing to the concern I have raised?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-4"
+        type="checkbox"
+        value="Would any clinical assessment be appropriate for my situation, and why?"
+      />
+      <label for="appointment-question-4">
+        Would any clinical assessment be appropriate for my situation, and why?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-5"
+        type="checkbox"
+        value="How could my concern relate to reproductive or sexual health?"
+      />
+      <label for="appointment-question-5">
+        How could my concern relate to reproductive or sexual health?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-6"
+        type="checkbox"
+        value="What should I do if my concern persists or changes?"
+      />
+      <label for="appointment-question-6">
+        What should I do if my concern persists or changes?
+      </label>
+    </div>
+
+    <div class="appointment-question">
+      <input
+        id="appointment-question-7"
+        type="checkbox"
+        value="What are the next steps, and when should I seek further advice?"
+      />
+      <label for="appointment-question-7">
+        What are the next steps, and when should I seek further advice?
+      </label>
+    </div>
+  </fieldset>
+
+  <section
+    class="appointment-summary"
+    aria-labelledby="appointment-summary-title"
+  >
+    <h3 id="appointment-summary-title">
+      My questions for the appointment
+    </h3>
+
+    <p id="appointment-summary-empty">
+      Your selected questions will appear here.
+    </p>
+
+    <ul
+      id="appointment-summary-list"
+      aria-live="polite"
+      aria-relevant="additions removals"
+    ></ul>
+
+    <p id="appointment-selection-count" role="status">
+      0 questions selected
+    </p>
+
+    <button
+      id="clear-appointment-selections"
+      class="button button-secondary"
+      type="button"
+    >
+      Clear selections
+    </button>
+  </section>
+
+  <p class="content-review-notice">
+    These are general discussion prompts, not medical advice.
+    The appropriate questions and any clinical assessment depend
+    on your individual circumstances. Content is pending clinical review.
+  </p>
+
+  <button
+    id="back-to-pathways-from-appointment"
+    class="text-button"
+    type="button"
+  >
+    Back to pathways
+  </button>
+</section>
+
+<section
   id="education-screen"
   class="education-screen"
   aria-labelledby="education-title"
