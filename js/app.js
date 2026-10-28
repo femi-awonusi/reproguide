@@ -1,5 +1,14 @@
-
 import { educationalTopics } from "./content.js";
+
+import {
+  setAssessmentGoal,
+  setSelectedQuestionIds
+} from "./assessment.js";
+
+import {
+  getSafeFallback,
+  generateRecommendation
+} from "./recommendation-engine.js";
 
 /**
  * ReproGuide application entry point.
@@ -160,31 +169,46 @@ function initializeApp() {
   }
 
   function updateAppointmentSummary() {
-    const selectedQuestions = Array.from(appointmentCheckboxes)
-      .filter((checkbox) => checkbox.checked)
-      .map((checkbox) => {
-        const label = document.querySelector(
-          `label[for="${checkbox.id}"]`
-        );
+  const selectedCheckboxes = Array.from(appointmentCheckboxes)
+    .filter((checkbox) => checkbox.checked);
 
-        return label ? label.textContent.trim() : checkbox.value;
-      });
+  const selectedQuestionIds = selectedCheckboxes.map(
+    (checkbox) => checkbox.id
+  );
 
-    appointmentSummaryList.replaceChildren();
+  const stateResult = setSelectedQuestionIds(selectedQuestionIds);
 
-    selectedQuestions.forEach((question) => {
-      const item = document.createElement("li");
-      item.textContent = question;
-      appointmentSummaryList.append(item);
-    });
-
-    const count = selectedQuestions.length;
-    appointmentSummaryEmpty.hidden = count > 0;
-    appointmentSummaryList.hidden = count === 0;
-
-    appointmentSelectionCount.textContent =
-      `${count} question${count === 1 ? "" : "s"} selected`;
+  if (!stateResult.success) {
+    console.error(
+      "Could not update assessment selections:",
+      stateResult.error
+    );
+    return;
   }
+
+  const selectedQuestions = selectedCheckboxes.map((checkbox) => {
+    const label = document.querySelector(
+      `label[for="${checkbox.id}"]`
+    );
+
+    return label ? label.textContent.trim() : checkbox.value;
+  });
+
+  appointmentSummaryList.replaceChildren();
+
+  selectedQuestions.forEach((question) => {
+    const item = document.createElement("li");
+    item.textContent = question;
+    appointmentSummaryList.append(item);
+  });
+
+  const count = selectedQuestions.length;
+  appointmentSummaryEmpty.hidden = count > 0;
+  appointmentSummaryList.hidden = count === 0;
+
+  appointmentSelectionCount.textContent =
+    `${count} question${count === 1 ? "" : "s"} selected`;
+}
 
   function clearAppointmentSelections() {
     appointmentCheckboxes.forEach((checkbox) => {
@@ -214,23 +238,59 @@ function initializeApp() {
     showPathways(true);
   });
 
-  pathwayButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selectedPathway = button.dataset.pathway;
+pathwayButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedPathway = button.dataset.pathway;
+
+    const pathwayGoals = {
+      learn: "general_education",
+      prepare: "consultation_preparation",
+      checkin: "reproductive_health_concern"
+    };
+
+    const goal = pathwayGoals[selectedPathway];
+
+    if (!goal) {
+      pathwayFeedback.textContent =
+        "This pathway is not currently available.";
+      return;
+    }
+
+    const stateResult = setAssessmentGoal(goal);
+
+    if (!stateResult.success) {
+      pathwayFeedback.textContent = stateResult.error;
+      return;
+    }
+
+    if (selectedPathway === "learn") {
+      pathwayFeedback.textContent =
+        "Educational information is available.";
+      renderEducationalTopics();
+      showEducation();
+      return;
+    }
+
+    if (selectedPathway === "prepare") {
+      pathwayFeedback.textContent =
+        "Appointment preparation is available.";
+      updateAppointmentSummary();
+      showAppointmentPreparation();
+      return;
+    }
+
+    if (selectedPathway === "checkin") {
+      const recommendation = generateRecommendation();
+      const fallback = getSafeFallback();
 
       pathwayFeedback.textContent =
-        pathwayMessages[selectedPathway] ||
-        "This pathway is not currently available.";
-
-      if (selectedPathway === "learn") {
-        renderEducationalTopics();
-        showEducation();
-      } else if (selectedPathway === "prepare") {
-        updateAppointmentSummary();
-        showAppointmentPreparation();
-      }
-    });
+        `${recommendation.reason} ${fallback.reason} ` +
+        "You can explore general educational information or prepare " +
+        "questions for a healthcare professional. This tool does not " +
+        "provide a diagnosis or personalised clinical advice.";
+    }
   });
+});
 
   appointmentCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", updateAppointmentSummary);
