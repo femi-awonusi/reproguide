@@ -64,7 +64,10 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="An illustration representing personal health, guidance and progress">
+        <div
+          class="hero-visual"
+          aria-label="An illustration representing personal health, guidance and progress"
+        >
           <div class="visual-orbit orbit-outer" aria-hidden="true"></div>
           <div class="visual-orbit orbit-inner" aria-hidden="true"></div>
 
@@ -75,7 +78,7 @@
             </div>
 
             <div class="visual-illustration" aria-hidden="true">
-              <svg viewBox="0 0 280 220" role="img">
+              <svg viewBox="0 0 280 220" role="img" aria-hidden="true">
                 <circle cx="140" cy="110" r="83" fill="#dceee7"/>
                 <circle cx="140" cy="110" r="63" fill="#c0e0d4"/>
                 <path
@@ -102,8 +105,10 @@
                 />
                 <circle cx="65" cy="66" r="8" fill="#e9b66a"/>
                 <circle cx="213" cy="151" r="11" fill="#e9b66a"/>
-                <path d="M203 45 l5 10 10 5 -10 5 -5 10 -5 -10 -10 -5 10 -5Z"
-                  fill="#ffffff"/>
+                <path
+                  d="M203 45 l5 10 10 5 -10 5 -5 10 -5 -10 -10 -5 10 -5Z"
+                  fill="#ffffff"
+                />
               </svg>
             </div>
 
@@ -195,287 +200,309 @@
       <div class="container privacy-grid">
         <div class="privacy-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48">
-            <rect x="10" y="21" width="28" height="21" rx="4"
-              fill="none" stroke="currentColor" stroke-width="2.5"/>
-            <path d="M16 21 V15 A8 8 0 0 1 32 15 V21"
-              fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round"/>
+            <rect
+              x="10"
+              y="21"
+              width="28"
+              height="21"
+              rx="4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+            />
+            <path
+              d="M16 21 V15 A8 8 0 0 1 32 15 V21"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
             <circle cx="24" cy="30" r="2.5" fill="currentColor"/>
-            <path d="M24 33 V36" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round"/>
+            <path
+              d="M24 33 V36"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+            />
           </svg>
         </div>
 
         <div>
           <p class="eyebrow">YOUR PRIVACY MATTERS</p>
-          <h2>Your answers stay in the current session.</h2>
+          <h2>Your selections stay in the current session.</h2>
           <p>
-            The prototype is designed to keep assessment answers in
-            application memory rather than save them persistently in your
-            browser or send them to a server. Refreshing or closing the page
-            may clear your answers.
+            Appointment-preparation selections remain in the application's
+            JavaScript memory. They are not saved to browser storage or
+            transmitted by this feature. Refreshing or closing the page
+            clears the current selections.
+          </p>
+          <p>
+            The guided assessment feature is not yet available and does not
+            currently collect personal assessment answers.
           </p>
           <p class="privacy-footnote">
-            This describes the intended behaviour of the prototype.
-            Technical verification is required as features are implemented.
+            This describes the current prototype implementation. It is not
+            a formal privacy or security audit.
           </p>
         </div>
       </div>
     </section>
-    
-<section
-  id="pathway-selection"
-  class="pathway-selection"
-  aria-labelledby="pathway-title"
-  hidden
->
-  <div class="section-heading">
-    <p class="eyebrow">YOUR NEXT STEP</p>
-    <h2 id="pathway-title">How would you like to begin?</h2>
-    <p>
-      Choose a starting point. ReproGuide provides educational
-      information and helps you prepare for appropriate healthcare.
-      It does not diagnose conditions or predict fertility.
-    </p>
-  </div>
-  
-<div
-  id="pathway-feedback"
-  class="pathway-feedback"
-  role="status"
-  aria-live="polite"
-></div>
 
-  <div class="pathway-options">
-    <button
-      class="pathway-option"
-      type="button"
-      data-pathway="learn"
+    <section
+      id="pathway-selection"
+      class="pathway-selection"
+      aria-labelledby="pathway-title"
+      hidden
     >
-      <span class="pathway-option-title">
-        Learn about reproductive health
-      </span>
-      <span>
-        Explore general information about male reproductive health.
-      </span>
-    </button>
+      <div class="section-heading">
+        <p class="eyebrow">YOUR NEXT STEP</p>
+        <h2 id="pathway-title">How would you like to begin?</h2>
+        <p>
+          Choose a starting point. ReproGuide provides educational
+          information and helps you prepare for appropriate healthcare.
+          It does not diagnose conditions or predict fertility.
+        </p>
+      </div>
 
-    <button
-      class="pathway-option"
-      type="button"
-      data-pathway="prepare"
+      <div
+        id="pathway-feedback"
+        class="pathway-feedback"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+      <div class="pathway-options">
+        <button
+          class="pathway-option"
+          type="button"
+          data-pathway="learn"
+        >
+          <span class="pathway-option-title">
+            Learn about reproductive health
+          </span>
+          <span>
+            Explore general information about male reproductive health.
+          </span>
+        </button>
+
+        <button
+          class="pathway-option"
+          type="button"
+          data-pathway="prepare"
+        >
+          <span class="pathway-option-title">
+            Prepare for a healthcare appointment
+          </span>
+          <span>
+            Organise questions and topics to discuss with a healthcare professional.
+          </span>
+        </button>
+
+        <button
+          class="pathway-option pathway-option-unavailable"
+          type="button"
+          data-pathway="checkin"
+          disabled
+        >
+          <span class="pathway-option-title">
+            Guided check-in
+            <span class="pathway-status">In development</span>
+          </span>
+          <span>
+            A guided series of optional questions to help organise your
+            reproductive health concerns. This feature is not yet available
+            and is not a diagnostic assessment.
+          </span>
+        </button>
+      </div>
+
+      <button id="back-to-welcome" class="text-button" type="button">
+        Back to welcome
+      </button>
+    </section>
+
+    <section
+      id="appointment-screen"
+      class="appointment-screen"
+      aria-labelledby="appointment-title"
+      hidden
     >
-      <span class="pathway-option-title">
-        Prepare for a healthcare appointment
-      </span>
-      <span>
-        Organise questions and topics to discuss with a healthcare professional.
-      </span>
-    </button>
+      <div class="section-heading">
+        <p class="eyebrow">PREPARE FOR YOUR VISIT</p>
+        <h2 id="appointment-title" tabindex="-1">
+          Prepare for a healthcare appointment
+        </h2>
+        <p>
+          Choose the questions you would like to discuss with a
+          qualified healthcare professional. You can select only
+          the topics relevant to you.
+        </p>
+      </div>
 
-    <button
-      class="pathway-option"
-      type="button"
-      data-pathway="checkin"
+      <div class="appointment-privacy-notice">
+        <strong>Your privacy</strong>
+        <p>
+          Your selections remain in this page's current JavaScript
+          session. They are not saved to browser storage or
+          transmitted by this feature.
+        </p>
+      </div>
+
+      <fieldset class="appointment-question-list">
+        <legend>Questions you may wish to ask</legend>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-1"
+            type="checkbox"
+            value="How can I explain my concerns and symptoms clearly?"
+          />
+          <label for="appointment-question-1">
+            How can I explain my concerns and symptoms clearly?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-2"
+            type="checkbox"
+            value="What information about my health history would be useful to discuss?"
+          />
+          <label for="appointment-question-2">
+            What information about my health history would be useful to discuss?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-3"
+            type="checkbox"
+            value="What might be contributing to the concern I have raised?"
+          />
+          <label for="appointment-question-3">
+            What might be contributing to the concern I have raised?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-4"
+            type="checkbox"
+            value="Would any clinical assessment be appropriate for my situation, and why?"
+          />
+          <label for="appointment-question-4">
+            Would any clinical assessment be appropriate for my situation, and why?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-5"
+            type="checkbox"
+            value="How could my concern relate to reproductive or sexual health?"
+          />
+          <label for="appointment-question-5">
+            How could my concern relate to reproductive or sexual health?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-6"
+            type="checkbox"
+            value="What should I do if my concern persists or changes?"
+          />
+          <label for="appointment-question-6">
+            What should I do if my concern persists or changes?
+          </label>
+        </div>
+
+        <div class="appointment-question">
+          <input
+            id="appointment-question-7"
+            type="checkbox"
+            value="What are the next steps, and when should I seek further advice?"
+          />
+          <label for="appointment-question-7">
+            What are the next steps, and when should I seek further advice?
+          </label>
+        </div>
+      </fieldset>
+
+      <section
+        class="appointment-summary"
+        aria-labelledby="appointment-summary-title"
+      >
+        <h3 id="appointment-summary-title">
+          My questions for the appointment
+        </h3>
+
+        <p id="appointment-summary-empty">
+          Your selected questions will appear here.
+        </p>
+
+        <ul
+          id="appointment-summary-list"
+          aria-live="polite"
+          aria-relevant="additions removals"
+        ></ul>
+
+        <p id="appointment-selection-count" role="status">
+          0 questions selected
+        </p>
+
+        <button
+          id="clear-appointment-selections"
+          class="button button-secondary"
+          type="button"
+        >
+          Clear selections
+        </button>
+      </section>
+
+      <p class="content-review-notice">
+        These are general discussion prompts, not medical advice.
+        The appropriate questions and any clinical assessment depend
+        on your individual circumstances. Content is pending clinical review.
+      </p>
+
+      <button
+        id="back-to-pathways-from-appointment"
+        class="text-button"
+        type="button"
+      >
+        Back to pathways
+      </button>
+    </section>
+
+    <section
+      id="education-screen"
+      class="education-screen"
+      aria-labelledby="education-title"
+      hidden
     >
-      <span class="pathway-option-title">
-        Begin a guided check-in
-      </span>
-      <span>
-        Answer optional questions to help organise your concerns.
-        This is not a diagnostic assessment.
-      </span>
-    </button>
-  </div>
+      <div class="section-heading">
+        <p class="eyebrow">LEARN AND UNDERSTAND</p>
+        <h2 id="education-title" tabindex="-1">
+          Male reproductive health
+        </h2>
+        <p>
+          Explore general educational information. These topics do not
+          diagnose conditions or determine an individual's fertility.
+        </p>
+      </div>
 
-  <button id="back-to-welcome" class="text-button" type="button">
-    Back to welcome
-  </button>
-</section>
+      <div id="education-topics" class="education-topics"></div>
 
-<section
-  id="appointment-screen"
-  class="appointment-screen"
-  aria-labelledby="appointment-title"
-  hidden
->
-  <div class="section-heading">
-    <p class="eyebrow">PREPARE FOR YOUR VISIT</p>
-    <h2 id="appointment-title" tabindex="-1">
-      Prepare for a healthcare appointment
-    </h2>
-    <p>
-      Choose the questions you would like to discuss with a
-      qualified healthcare professional. You can select only
-      the topics relevant to you.
-    </p>
-  </div>
+      <p class="content-review-notice">
+        Content status: pending clinical review. Please consult a qualified
+        healthcare professional for individual medical concerns.
+      </p>
 
-  <div class="appointment-privacy-notice">
-    <strong>Your privacy</strong>
-    <p>
-      Your selections remain in this page's current JavaScript
-      session. They are not saved to browser storage or
-      transmitted by this feature.
-    </p>
-  </div>
-
-  <fieldset class="appointment-question-list">
-    <legend>Questions you may wish to ask</legend>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-1"
-        type="checkbox"
-        value="How can I explain my concerns and symptoms clearly?"
-      />
-      <label for="appointment-question-1">
-        How can I explain my concerns and symptoms clearly?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-2"
-        type="checkbox"
-        value="What information about my health history would be useful to discuss?"
-      />
-      <label for="appointment-question-2">
-        What information about my health history would be useful to discuss?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-3"
-        type="checkbox"
-        value="What might be contributing to the concern I have raised?"
-      />
-      <label for="appointment-question-3">
-        What might be contributing to the concern I have raised?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-4"
-        type="checkbox"
-        value="Would any clinical assessment be appropriate for my situation, and why?"
-      />
-      <label for="appointment-question-4">
-        Would any clinical assessment be appropriate for my situation, and why?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-5"
-        type="checkbox"
-        value="How could my concern relate to reproductive or sexual health?"
-      />
-      <label for="appointment-question-5">
-        How could my concern relate to reproductive or sexual health?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-6"
-        type="checkbox"
-        value="What should I do if my concern persists or changes?"
-      />
-      <label for="appointment-question-6">
-        What should I do if my concern persists or changes?
-      </label>
-    </div>
-
-    <div class="appointment-question">
-      <input
-        id="appointment-question-7"
-        type="checkbox"
-        value="What are the next steps, and when should I seek further advice?"
-      />
-      <label for="appointment-question-7">
-        What are the next steps, and when should I seek further advice?
-      </label>
-    </div>
-  </fieldset>
-
-  <section
-    class="appointment-summary"
-    aria-labelledby="appointment-summary-title"
-  >
-    <h3 id="appointment-summary-title">
-      My questions for the appointment
-    </h3>
-
-    <p id="appointment-summary-empty">
-      Your selected questions will appear here.
-    </p>
-
-    <ul
-      id="appointment-summary-list"
-      aria-live="polite"
-      aria-relevant="additions removals"
-    ></ul>
-
-    <p id="appointment-selection-count" role="status">
-      0 questions selected
-    </p>
-
-    <button
-      id="clear-appointment-selections"
-      class="button button-secondary"
-      type="button"
-    >
-      Clear selections
-    </button>
-  </section>
-
-  <p class="content-review-notice">
-    These are general discussion prompts, not medical advice.
-    The appropriate questions and any clinical assessment depend
-    on your individual circumstances. Content is pending clinical review.
-  </p>
-
-  <button
-    id="back-to-pathways-from-appointment"
-    class="text-button"
-    type="button"
-  >
-    Back to pathways
-  </button>
-</section>
-
-<section
-  id="education-screen"
-  class="education-screen"
-  aria-labelledby="education-title"
-  hidden
->
-  <div class="section-heading">
-    <p class="eyebrow">LEARN AND UNDERSTAND</p>
-    <h2 id="education-title" tabindex="-1">
-      Male reproductive health
-    </h2>
-    <p>
-      Explore general educational information. These topics do not
-      diagnose conditions or determine an individual's fertility.
-    </p>
-  </div>
-
-  <div id="education-topics" class="education-topics"></div>
-
-  <p class="content-review-notice">
-    Content status: pending clinical review. Please consult a qualified
-    healthcare professional for individual medical concerns.
-  </p>
-
-  <button id="back-to-pathways" class="text-button" type="button">
-    Back to pathways
-  </button>
-</section>
-
+      <button id="back-to-pathways" class="text-button" type="button">
+        Back to pathways
+      </button>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -488,7 +515,7 @@
       <p>Health education for more informed conversations.</p>
       <p class="footer-status">Innovation prototype · Not a medical service</p>
     </div>
-    </footer>
+  </footer>
 
   <script type="module" src="js/app.js"></script>
 </body>

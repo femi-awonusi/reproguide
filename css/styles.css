@@ -780,6 +780,153 @@ h1 span {
 }
 
 
+/* Pathway selection */
+
+.pathway-selection {
+  padding: 64px 0 72px;
+}
+
+.pathway-selection .section-heading,
+.pathway-options,
+.pathway-feedback,
+.pathway-selection > .text-button {
+  width: min(100% - 48px, 820px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.pathway-selection .section-heading {
+  margin-bottom: 30px;
+}
+
+.pathway-selection .section-heading h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.45rem);
+  letter-spacing: -1px;
+  line-height: 1.25;
+}
+
+.pathway-selection .section-heading > p:last-child {
+  max-width: 700px;
+  color: var(--color-muted);
+}
+
+.pathway-feedback {
+  margin-bottom: 18px;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.pathway-options {
+  display: grid;
+  gap: 16px;
+}
+
+.pathway-option {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.pathway-option:not(:disabled):hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.pathway-option:focus-visible,
+.pathway-selection > .text-button:focus-visible {
+  outline: 3px solid #79521a;
+  outline-offset: 4px;
+}
+
+.pathway-option-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary-dark);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
+.pathway-option > span:last-child {
+  color: var(--color-muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.pathway-option-unavailable,
+.pathway-option-unavailable:disabled {
+  border-style: dashed;
+  border-color: var(--color-warning-border);
+  background: var(--color-warning-background);
+  color: var(--color-muted);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.pathway-option-unavailable .pathway-option-title {
+  color: var(--color-ink);
+}
+
+.pathway-option-unavailable > span:last-child {
+  color: #5e5747;
+}
+
+.pathway-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border: 1px solid var(--color-warning-border);
+  border-radius: 20px;
+  background: #f3e2b8;
+  color: #654713;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.pathway-selection > .text-button {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+  .pathway-selection {
+    padding: 42px 0 50px;
+  }
+
+  .pathway-selection .section-heading,
+  .pathway-options,
+  .pathway-feedback,
+  .pathway-selection > .text-button {
+    width: calc(100% - 36px);
+  }
+
+  .pathway-option {
+    padding: 18px;
+  }
+
+  .pathway-selection .section-heading h2 {
+    font-size: 1.8rem;
+  }
+}
+
 /* Appointment preparation */
 
 .appointment-screen {

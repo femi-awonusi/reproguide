@@ -7,8 +7,6 @@ import {
   resetAssessmentState
 } from "./assessment.js";
 
-import { generateRecommendation } from "./recommendation-engine.js";
-
 /**
  * ReproGuide application entry point.
  *
@@ -236,7 +234,6 @@ function initializeApp() {
   const pathwayGoals = {
     learn: "general_education",
     prepare: "consultation_preparation",
-    checkin: "reproductive_health_concern"
   };
 
   beginLink.addEventListener("click", (event) => {
@@ -253,59 +250,53 @@ function initializeApp() {
   });
 
   pathwayButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selectedPathway = button.dataset.pathway;
-      const goal = pathwayGoals[selectedPathway];
+  button.addEventListener("click", () => {
+    const selectedPathway = button.dataset.pathway;
 
-      if (!goal) {
-        pathwayFeedback.textContent =
-          "This pathway is not currently available.";
-        return;
-      }
+    // Only explicitly supported pathways may be opened.
+    // This also rejects programmatically triggered events on disabled buttons.
+    if (
+      button.disabled ||
+      !Object.hasOwn(pathwayGoals, selectedPathway)
+    ) {
+      pathwayFeedback.textContent =
+        "This pathway is not currently available.";
+      return;
+    }
 
-      // Starting another pathway clears selections from the previous one.
-      // Reopening appointment preparation preserves its current selections.
-      if (selectedPathway !== "prepare") {
-        resetAssessmentSession();
-      }
+    const goal = pathwayGoals[selectedPathway];
 
-      const stateResult = setAssessmentGoal(goal);
+    // Starting another pathway clears selections from the previous one.
+    // Reopening appointment preparation preserves its current selections.
+    if (selectedPathway !== "prepare") {
+      resetAssessmentSession();
+    }
 
-      if (!stateResult.success) {
-        pathwayFeedback.textContent = stateResult.error;
-        return;
-      }
+    const stateResult = setAssessmentGoal(goal);
 
-      if (selectedPathway === "learn") {
-        pathwayFeedback.textContent =
-          "Educational information is available.";
+    if (!stateResult.success) {
+      pathwayFeedback.textContent = stateResult.error;
+      return;
+    }
 
-        renderEducationalTopics();
-        showEducation();
-        return;
-      }
+    if (selectedPathway === "learn") {
+      pathwayFeedback.textContent =
+        "Educational information is available.";
 
-      if (selectedPathway === "prepare") {
-        pathwayFeedback.textContent =
-          "Appointment preparation is available.";
+      renderEducationalTopics();
+      showEducation();
+      return;
+    }
 
-        updateAppointmentSummary();
-        showAppointmentPreparation();
-        return;
-      }
+    if (selectedPathway === "prepare") {
+      pathwayFeedback.textContent =
+        "Appointment preparation is available.";
 
-      if (selectedPathway === "checkin") {
-        const recommendation = generateRecommendation();
-
-        pathwayFeedback.textContent =
-          `${recommendation.reason} ` +
-          "You can explore general educational information or prepare " +
-          "questions for a healthcare professional. No health answers " +
-          "have been requested or recorded. This tool does not provide " +
-          "a diagnosis or personalised clinical advice.";
-      }
-    });
+      updateAppointmentSummary();
+      showAppointmentPreparation();
+    }
   });
+});
 
   appointmentCheckboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", updateAppointmentSummary);
