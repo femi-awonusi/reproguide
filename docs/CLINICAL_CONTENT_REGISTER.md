@@ -1,131 +1,237 @@
 # ReproGuide Clinical Content Register
 
-**Version:** 0.1
-**Date:** 27 October 2026
-**Status:** Initial evidence review — clinical approval pending
+**Version:** 0.2
+**Date:** 10 November 2026
+**Status:** Evidence register updated to reflect current implementation; clinical and legal review pending
 **Owner:** ReproGuide project developer
+**Previous Version:** 0.1, 27 October 2026
+
+---
 
 ## 1. Purpose
 
-This register records the evidence, intended use, limitations and review status of clinical and educational content proposed for ReproGuide.
+This register records the sources, evidence findings, intended use, limitations and review status of clinical and educational content considered for ReproGuide.
 
-ReproGuide is an educational and care-navigation prototype. It is not a diagnostic device, a substitute for clinical assessment, or a validated fertility prediction system.
+ReproGuide is an educational and care-navigation prototype. It is not a diagnostic device, a substitute for professional clinical assessment, or a validated fertility prediction or clinical decision-support system.
 
-**Approval rule:** No content may be described as clinically approved until its source, interpretation, user-facing wording and intended application have been reviewed by an appropriately qualified clinical reviewer.
+The register distinguishes between:
 
-## 2. Evidence register
+- Educational content currently present in the application.
+- Evidence sources identified for possible future content development.
+- Proposed clinical guidance that has not been approved for implementation.
+- Privacy and legal references requiring separate review.
+
+**Clinical approval rule:** No content may be described as clinically approved until its source, interpretation, user-facing wording, intended application and limitations have been reviewed by an appropriately qualified clinical reviewer.
+
+The presence of a source in this register does not constitute clinical approval.
+
+## 2. Current educational content register
+
+The current application contains three educational topics defined in `js/content.js`.
+
+The content module declares its review status as `pending-clinical-review`. All three topics retain this status.
+
+### CR-008 — Understanding male reproductive health
+
+- **Application topic ID:** `reproductive-health-basics`
+- **Application title:** Understanding male reproductive health
+- **Source:** MedlinePlus, US National Library of Medicine, _Male Reproductive System_.
+- **URL:** [https://medlineplus.gov/malereproductivesystem.html](https://medlineplus.gov/malereproductivesystem.html)
+- **Source finding:** The source provides educational information and links to topics concerning male reproductive anatomy and associated reproductive and sexual health conditions.
+- **Current application summary:** Male reproductive health includes the function of the reproductive organs, sexual health, hormone activity and the production and transport of sperm.
+- **Current key points:**
+  - Reproductive health is one part of overall health.
+  - A person's symptoms or concerns may need individual assessment by a qualified healthcare professional.
+  - Educational information cannot establish whether an individual has a medical condition.
+- **Intended use:** General education about male reproductive health.
+- **Limitations:** The application must not use general educational material to establish an individual's diagnosis, reproductive status or fertility.
+- **Source verification status:** Source identified and checked.
+- **Clinical review status:** Pending.
+- **Implementation status:** Present in `js/content.js`; not clinically approved.
+
+### CR-009 — Understanding fertility
+
+- **Application topic ID:** `fertility-fundamentals`
+- **Application title:** Understanding fertility
+- **Source:** NHS, _Causes of infertility_.
+- **URL:** [https://www.nhs.uk/conditions/infertility/causes/](https://www.nhs.uk/conditions/infertility/causes/)
+- **Source finding:** Fertility difficulties may have different causes affecting either partner. Some cases remain unexplained.
+- **Current application summary:** Fertility can be influenced by different factors affecting either partner. A healthcare professional can help assess concerns and explain appropriate next steps.
+- **Current key points:**
+  - Fertility concerns do not, by themselves, establish a diagnosis.
+  - Possible contributing factors vary between individuals.
+  - A healthcare professional can advise whether an assessment is appropriate.
+- **Intended use:** General education and encouragement of informed professional consultation.
+- **Limitations:** The application must not assign a cause of infertility, calculate fertility likelihood or label an individual as fertile or infertile.
+- **Source verification status:** Source identified and checked.
+- **Clinical review status:** Pending.
+- **Implementation status:** Present in `js/content.js`; not clinically approved.
+
+### CR-010 — Recognising changes that need medical attention
+
+- **Application topic ID:** `when-to-seek-care`
+- **Application title:** Recognising changes that need medical attention
+- **Source:** NHS, _Testicle lumps and swellings_.
+- **URL:** [https://www.nhs.uk/symptoms/testicle-lumps-and-swellings/](https://www.nhs.uk/symptoms/testicle-lumps-and-swellings/)
+- **Source finding:** New lumps, swelling and persistent discomfort should be assessed by a healthcare professional. Sudden, severe testicular pain may require immediate emergency assessment.
+- **Current application summary:** New or unexplained changes affecting the testicles or reproductive organs should not be self-diagnosed.
+- **Current key points:**
+  - A new testicular lump, swelling or persistent discomfort should be assessed by a healthcare professional.
+  - Sudden, severe testicular pain requires immediate emergency medical assessment.
+  - When symptoms are concerning or their urgency is unclear, seek professional medical advice rather than relying on this educational guide.
+- **Intended use:** Encourage appropriate professional assessment rather than self-diagnosis.
+- **Limitations:** The application must not diagnose the cause of symptoms or replace emergency or professional medical services. NHS service references and emergency arrangements must not be presented as Nigerian service instructions.
+- **Source verification status:** Source identified and checked.
+- **Clinical review status:** Pending, including review of locally appropriate care-navigation wording.
+- **Implementation status:** Present in `js/content.js`; not clinically approved.
+
+## 3. Additional evidence sources for future development
+
+The following entries are research and evidence references. They are not currently implemented as personalised clinical guidance.
 
 ### CR-001 — Definition of infertility
 
 - **Source:** World Health Organization (WHO), _Guideline for the prevention, diagnosis and treatment of infertility_.
 - **Publication date:** 28 November 2025.
 - **URL:** [https://www.who.int/publications/i/item/9789240115774](https://www.who.int/publications/i/item/9789240115774)
-- **Source finding:** WHO defines infertility in relation to failure to achieve pregnancy after 12 months or more of regular unprotected sexual intercourse.
-- **Proposed user-facing wording:** “Infertility is a medical condition that can involve male factors, female factors, both partners, or circumstances that remain unexplained. A digital questionnaire cannot determine whether you or a partner is infertile.”
-- **Intended use:** General education and explanation of when a clinical fertility assessment may be relevant.
-- **Possible next step:** Offer a consultation-preparation pathway when a user reports difficulty conceiving.
-- **Limitations:** The definition is not a universal waiting rule for every individual. Age, medical history, known conditions and other circumstances may justify earlier professional assessment.
-- **Verification status:** Source publication verified; wording and application require clinical review.
-- **Implementation status:** Proposed; not approved for implementation.
+- **Source finding:** WHO defines infertility as a disease of the male or female reproductive system characterised by failure to achieve pregnancy after 12 months or more of regular unprotected sexual intercourse.
+- **Proposed user-facing wording:** "Infertility can involve male factors, female factors or unexplained circumstances. A digital questionnaire cannot determine whether an individual or couple has infertility."
+- **Intended use:** General education and explanation of the clinical definition.
+- **Limitations:** The definition must not be presented as a universal waiting rule for every individual. Individual circumstances may warrant earlier professional assessment.
+- **Source verification status:** Publication and definition checked.
+- **Clinical review status:** Pending.
+- **Implementation status:** Research reference; not implemented as a separate application topic or clinical rule.
 
 ### CR-002 — Initial male fertility evaluation
 
 - **Source:** American Urological Association (AUA) and American Society for Reproductive Medicine (ASRM), _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
 - **Publication:** Guideline published in 2020; summary published in _Fertility and Sterility_ in 2021.
 - **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
-- **Source finding:** Initial male evaluation includes reproductive history and one or more semen analyses. Men with abnormal semen parameters or presumed male infertility should receive appropriate clinical evaluation.
-- **Proposed user-facing wording:** “A healthcare professional can review your reproductive and medical history and determine whether semen analysis or other investigations are appropriate.”
-- **Intended use:** Explain the purpose of professional assessment without ordering tests or interpreting results.
-- **Possible next step:** Prepare a clinician consultation summary.
-- **Limitations:** ReproGuide must not prescribe a test, diagnose a cause, or interpret an individual result as proof of fertility or infertility.
-- **Verification status:** Relevant guideline statements verified; local clinical applicability requires review.
-- **Implementation status:** Proposed; not approved for implementation.
+- **Source finding:** The guideline addresses male reproductive history, physical examination and diagnostic testing as part of the evaluation of an infertile couple. Semen analysis is an important component of this evaluation.
+- **Proposed user-facing wording:** "A healthcare professional can review relevant reproductive and medical history and determine whether semen analysis or other investigations are appropriate."
+- **Intended use:** Explain the purpose of professional assessment without ordering tests or interpreting individual results.
+- **Limitations:** ReproGuide must not prescribe investigations, diagnose a cause or independently determine which tests an individual requires.
+- **Source verification status:** Relevant guideline identified and checked.
+- **Clinical review status:** Pending, including consideration of local clinical applicability.
+- **Implementation status:** Research reference; no personalised assessment or test-ordering functionality.
 
 ### CR-003 — Interpretation of semen analysis
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
 - **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
-- **Source finding:** Semen parameters vary, and values above or below a reference limit do not, by themselves, predict fertility or infertility.
-- **Proposed user-facing wording:** “Semen analysis is one part of a clinical assessment. Results need to be interpreted in context by a qualified healthcare professional.”
-- **Intended use:** Prevent users from drawing definitive conclusions from a single laboratory value.
-- **Possible next step:** Encourage discussion of the complete report with a healthcare professional.
-- **Limitations:** The prototype will not calculate semen scores, interpret uploaded laboratory reports, or predict conception.
-- **Verification status:** Source finding verified.
-- **Implementation status:** Educational principle proposed; clinical review pending.
+- **Source finding:** Semen parameters vary. Individual semen parameters, considered in isolation, are generally not highly predictive of fertility or diagnostic of infertility.
+- **Proposed user-facing wording:** "Semen analysis is one part of a clinical assessment. Results need to be interpreted in context by a qualified healthcare professional."
+- **Intended use:** Discourage definitive conclusions based on an isolated laboratory value.
+- **Limitations:** The prototype must not calculate semen scores, interpret uploaded laboratory reports or predict fertility.
+- **Source verification status:** Relevant guideline finding identified and checked.
+- **Clinical review status:** Pending.
+- **Implementation status:** General safety principle; no semen-analysis interpretation functionality.
 
 ### CR-004 — Reproductive history and associated factors
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
 - **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
-- **Source finding:** Reproductive history can include relevant medical history, sexual function, lifestyle, medication use and environmental exposures. Evidence concerning many individual risk factors is limited.
-- **Proposed user-facing wording:** “Some medical conditions, medicines and exposures may be relevant to reproductive health. Their significance depends on the individual situation and may require professional review.”
-- **Intended use:** Help users prepare relevant questions for a consultation.
-- **Possible next step:** Create a user-reviewed list of topics to discuss with a clinician.
-- **Limitations:** Do not label a user high-risk based on a single lifestyle response. Do not advise stopping prescribed medication or starting supplements.
-- **Verification status:** General principle verified; specific factor-by-factor claims require separate evidence review.
-- **Implementation status:** Proposed; individual rules not approved.
+- **Source finding:** Male reproductive evaluation considers relevant reproductive and medical history. Specific factors and their clinical significance require appropriate assessment.
+- **Proposed user-facing wording:** "Some medical conditions, medicines and exposures may be relevant to reproductive health. Their significance depends on the individual situation and may require professional review."
+- **Intended use:** Support preparation for a professional consultation.
+- **Limitations:** Do not assign a risk category from an isolated lifestyle response. Do not advise users to stop prescribed medication or start supplements.
+- **Source verification status:** General guideline identified; individual factor claims require separate evidence review.
+- **Clinical review status:** Pending.
+- **Implementation status:** Proposed; no individual risk rules approved.
 
 ### CR-005 — Treatment and supplements
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part II_.
 - **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-aua-asrm-guideline-part2/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-aua-asrm-guideline-part2/)
-- **Source finding:** The guideline states that the clinical utility of supplements such as antioxidants and vitamins for treating male infertility is questionable and that evidence is inadequate to recommend specific agents.
-- **Proposed user-facing wording:** “Do not assume that fertility supplements are effective or appropriate for you. Discuss treatments and supplements with a qualified healthcare professional.”
-- **Intended use:** Reduce unsupported treatment claims and encourage informed consultation.
-- **Possible next step:** Prepare questions about proposed treatments or supplements.
+- **Source finding:** The guideline describes the clinical utility of supplements such as antioxidants and vitamins for treating male infertility as questionable and states that evidence is inadequate to recommend specific agents.
+- **Proposed user-facing wording:** "Do not assume that fertility supplements are effective or appropriate for an individual. Discuss treatment-related questions with a qualified healthcare professional."
+- **Intended use:** Avoid unsupported treatment claims and encourage informed professional consultation.
 - **Limitations:** No supplement recommendations, medication dosing, prescriptions or treatment selection.
-- **Verification status:** Relevant guideline statement verified.
-- **Implementation status:** Proposed; clinical review pending.
+- **Source verification status:** Relevant guideline statement identified and checked.
+- **Clinical review status:** Pending.
+- **Implementation status:** Safety boundary only; treatment and supplement recommendations are not provided.
 
 ### CR-006 — WHO global infertility guidance
 
 - **Source:** WHO, _Guideline for the prevention, diagnosis and treatment of infertility_.
 - **Publication date:** 28 November 2025.
 - **URL:** [https://www.who.int/publications/i/item/9789240115774](https://www.who.int/publications/i/item/9789240115774)
-- **Source finding:** The guideline provides evidence-based recommendations addressing infertility prevention, diagnosis and treatment and is intended to support national adaptation.
+- **Source finding:** The guideline provides evidence-based recommendations concerning infertility prevention, diagnosis and treatment. It is intended to support countries in adopting, adapting or updating national clinical guidance.
 - **Proposed user-facing wording:** No direct patient-facing recommendation is approved from this entry alone.
 - **Intended use:** Primary evidence source for future content review and clinical pathway development.
-- **Possible next step:** Review relevant recommendations and the male-factor evidence annex before drafting specific clinical rules.
-- **Limitations:** A global guideline is not automatically a locally approved clinical protocol. Each proposed pathway needs applicability review.
-- **Verification status:** Publication and purpose verified; detailed recommendation-level review outstanding.
-- **Implementation status:** Research source only.
+- **Limitations:** Global recommendations must not automatically be treated as locally approved Nigerian clinical protocols.
+- **Source verification status:** Publication and purpose checked; recommendation-level review remains outstanding.
+- **Clinical review status:** Pending.
+- **Implementation status:** Research reference only.
 
-### CR-007 — Privacy and reproductive information
+## 4. Privacy and legal reference
 
-- **Source:** Nigeria Data Protection Act 2023, subject to confirmation against the authoritative legislation and applicable guidance.
-- **Reference URL:** [https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf](https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf)
-- **Proposed user-facing wording:** “Your answers are used to provide this on-screen educational guidance. In this prototype, assessment answers are not intentionally saved after the session ends. You choose whether to export a consultation summary.”
-- **Intended use:** Explain the intended data flow and privacy controls accurately.
-- **Possible next step:** Allow users to review the summary before exporting it.
-- **Limitations:** A privacy notice is not proof of legal compliance. Hosting, downloaded files, browser behaviour, logs and applicable legal duties require further assessment.
-- **Verification status:** Legislation identified; detailed legal analysis and implementation review outstanding.
-- **Implementation status:** Privacy design principle proposed; legal approval pending.
+### CR-007 — Privacy and reproductive health information
 
-## 3. Evidence and wording controls
+- **Source:** Nigeria Data Protection Act 2023.
+- - - **Reference:** [Nigeria Data Protection Act 2023](https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf)
+- **Relevant provision:** The Act's definition of sensitive personal data includes information relating to an individual's health status and sex life.
+- **Intended use:** Inform privacy-by-design decisions and future review of the handling of reproductive health information.
+- **Proposed user-facing wording:** Any privacy notice must accurately describe the actual data collected, its purpose, where it is processed, whether it is retained or transmitted, and the user's available controls.
+- **Limitations:** A privacy notice or technical inspection is not proof of legal compliance. Hosting arrangements, third-party services, browser behaviour, logs, retention, user rights and applicable legal obligations require further assessment.
+- **Source verification status:** Legislation identified; detailed legal analysis outstanding.
+- **Legal review status:** Pending.
+- **Implementation status:** Privacy design reference; not a legal compliance determination.
 
-Every implemented educational statement must have:
+## 5. Content and evidence controls
 
-1. A traceable source and publication date.
+Every educational statement considered for implementation must have:
+
+1. A traceable source and publication or review date, where available.
 2. A documented explanation of how the source supports the wording.
-3. Defined intended use and exclusions.
+3. A defined intended use and explicit exclusions.
 4. A stated limitation or uncertainty where relevant.
-5. A reproducible acceptance test.
-6. A review status and revision history.
+5. A documented clinical review status.
+6. An appropriate software acceptance test where the statement or its presentation is subject to application logic.
+7. A revision history when its wording, source or intended use changes.
 
-Where sources disagree, evidence is insufficient, or applicability is uncertain, ReproGuide must not invent a consensus. The content should be withheld or replaced by neutral advice to seek appropriate professional guidance.
+Where sources disagree, evidence is insufficient, or applicability is uncertain, ReproGuide must not invent a consensus. The content should be withheld or replaced by neutral wording encouraging appropriate professional guidance.
 
-## 4. Clinical review log
+Source verification does not equal clinical approval.
 
-| Item                                   | Status                      |
-| -------------------------------------- | --------------------------- |
-| WHO infertility guideline identified   | Source verified             |
-| AUA/ASRM Part I identified             | Source verified             |
-| AUA/ASRM Part II identified            | Source verified             |
-| Nigeria Data Protection Act identified | Legal review outstanding    |
-| Proposed patient-facing wording        | Clinical review outstanding |
-| Urgent escalation rules                | Not yet approved            |
-| Complete recommendation pathways       | Not yet approved            |
+## 6. Clinical and legal review log
 
-## 5. Revision history
+| Item                                        | Status                                           |
+| ------------------------------------------- | ------------------------------------------------ |
+| MedlinePlus male reproductive system source | Identified and checked                           |
+| NHS causes of infertility source            | Identified and checked                           |
+| NHS testicle lumps and swellings source     | Identified and checked                           |
+| WHO infertility guideline                   | Publication and definition checked               |
+| AUA/ASRM Part I                             | Guideline identified and checked                 |
+| AUA/ASRM Part II                            | Guideline identified and checked                 |
+| Nigeria Data Protection Act 2023            | Legislation identified; legal review outstanding |
+| Current application educational wording     | Clinical review outstanding                      |
+| Local care-navigation wording               | Clinical review outstanding                      |
+| Urgent escalation wording                   | Clinical and local pathway review outstanding    |
+| Personalised recommendation pathways        | Not approved; disabled                           |
+| Semen-analysis interpretation               | Not implemented                                  |
+| Treatment or supplement recommendations     | Not implemented                                  |
+
+## 7. Implementation and safety boundaries
+
+The current application contains three educational topics in `js/content.js`. Their review status is `pending-clinical-review`.
+
+The current application does not provide:
+
+- A diagnosis or fertility prediction.
+- A validated clinical risk score.
+- Semen-analysis interpretation.
+- Treatment or supplement recommendations.
+- Personalised clinical recommendations.
+- A complete guided assessment workflow.
+
+The appointment-preparation pathway allows users to select general questions for discussion with a healthcare professional. It does not transmit a consultation summary to a healthcare professional.
+
+The application must not present proposed evidence entries as implemented clinical functionality.
+
+Any future clinical content activation requires appropriate review, documented approval, implementation checks and testing before release.
+
+## 8. Revision history
 
 - **Version 0.1 — 27 October 2026:** Initial evidence register prepared for prototype specification. No clinical reviewer approval claimed.
+- **Version 0.2 — 10 November 2026:** Register reorganised to distinguish current educational content from proposed evidence sources and privacy references. Implementation statuses and clinical review boundaries clarified. No clinical or legal approval claimed.
