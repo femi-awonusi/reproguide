@@ -1,10 +1,10 @@
-# ReproGuide Clinical Content Register
+﻿# ReproGuide Clinical Content Register
 
-**Version:** 0.2
-**Date:** 10 November 2026
+**Version:** 0.3
+**Date:** 11 November 2026
 **Status:** Evidence register updated to reflect current implementation; clinical and legal review pending
 **Owner:** ReproGuide project developer
-**Previous Version:** 0.1, 27 October 2026
+**Previous Version:** 0.2, 10 November 2026
 
 ---
 
@@ -35,13 +35,14 @@ The content module declares its review status as `pending-clinical-review`. All 
 
 - **Application topic ID:** `reproductive-health-basics`
 - **Application title:** Understanding male reproductive health
-- **Source:** MedlinePlus, US National Library of Medicine, _Male Reproductive System_.
-- **URL:** [https://medlineplus.gov/malereproductivesystem.html](https://medlineplus.gov/malereproductivesystem.html)
-- **Source finding:** The source provides educational information and links to topics concerning male reproductive anatomy and associated reproductive and sexual health conditions.
-- **Current application summary:** Male reproductive health includes the function of the reproductive organs, sexual health, hormone activity and the production and transport of sperm.
+- **Source:** MedlinePlus, US National Library of Medicine, _Sperm release pathway_.
+- **URL:** https://medlineplus.gov/ency/anatomyvideos/000121.htm
+- **Source finding:** The source describes the pathway through which sperm are produced, mature and transported.
+- **Current application summary:** The male reproductive system includes organs and structures that support sperm production, maturation and transport. Reproductive health is one part of overall health, and individual concerns may require professional assessment.
 - **Current key points:**
+  - The male reproductive system has roles in sperm production, maturation and transport.
   - Reproductive health is one part of overall health.
-  - A person's symptoms or concerns may need individual assessment by a qualified healthcare professional.
+  - Individual symptoms or concerns may require assessment by a qualified healthcare professional.
   - Educational information cannot establish whether an individual has a medical condition.
 - **Intended use:** General education about male reproductive health.
 - **Limitations:** The application must not use general educational material to establish an individual's diagnosis, reproductive status or fertility.
@@ -53,17 +54,19 @@ The content module declares its review status as `pending-clinical-review`. All 
 
 - **Application topic ID:** `fertility-fundamentals`
 - **Application title:** Understanding fertility
-- **Source:** NHS, _Causes of infertility_.
-- **URL:** [https://www.nhs.uk/conditions/infertility/causes/](https://www.nhs.uk/conditions/infertility/causes/)
-- **Source finding:** Fertility difficulties may have different causes affecting either partner. Some cases remain unexplained.
-- **Current application summary:** Fertility can be influenced by different factors affecting either partner. A healthcare professional can help assess concerns and explain appropriate next steps.
+- **Source:** World Health Organization (WHO), _Guideline for the prevention, diagnosis and treatment of infertility_.
+- **Publication date:** 28 November 2025.
+- **URL:** https://www.who.int/publications/i/item/9789240115774
+- **Source finding:** WHO guidance addresses infertility as a reproductive health concern and recognises that relevant factors may affect either partner. Some fertility concerns remain unexplained.
+- **Current application summary:** Fertility is influenced by reproductive health factors affecting one or both partners. General educational information cannot determine an individual's fertility status. A qualified healthcare professional can explain appropriate assessment options.
 - **Current key points:**
   - Fertility concerns do not, by themselves, establish a diagnosis.
-  - Possible contributing factors vary between individuals.
-  - A healthcare professional can advise whether an assessment is appropriate.
+  - Factors affecting fertility may involve either partner.
+  - Some fertility concerns remain unexplained.
+  - A qualified healthcare professional can advise whether an assessment is appropriate.
 - **Intended use:** General education and encouragement of informed professional consultation.
 - **Limitations:** The application must not assign a cause of infertility, calculate fertility likelihood or label an individual as fertile or infertile.
-- **Source verification status:** Source identified and checked.
+- **Source verification status:** Publication and purpose checked.
 - **Clinical review status:** Pending.
 - **Implementation status:** Present in `js/content.js`; not clinically approved.
 
@@ -72,16 +75,17 @@ The content module declares its review status as `pending-clinical-review`. All 
 - **Application topic ID:** `when-to-seek-care`
 - **Application title:** Recognising changes that need medical attention
 - **Source:** NHS, _Testicle lumps and swellings_.
-- **URL:** [https://www.nhs.uk/symptoms/testicle-lumps-and-swellings/](https://www.nhs.uk/symptoms/testicle-lumps-and-swellings/)
+- **URL:** https://www.nhs.uk/symptoms/testicle-lumps-and-swellings/
+- **Supplementary source:** NHS, _Testicle pain_. https://www.nhs.uk/symptoms/testicle-pain/
 - **Source finding:** New lumps, swelling and persistent discomfort should be assessed by a healthcare professional. Sudden, severe testicular pain may require immediate emergency assessment.
-- **Current application summary:** New or unexplained changes affecting the testicles or reproductive organs should not be self-diagnosed.
+- **Current application summary:** New or unexplained changes affecting the testicles should be assessed by a qualified healthcare professional. Some symptoms may require urgent medical attention. This guide cannot determine the cause or urgency of an individual's symptoms.
 - **Current key points:**
   - A new testicular lump, swelling or persistent discomfort should be assessed by a healthcare professional.
   - Sudden, severe testicular pain requires immediate emergency medical assessment.
   - When symptoms are concerning or their urgency is unclear, seek professional medical advice rather than relying on this educational guide.
 - **Intended use:** Encourage appropriate professional assessment rather than self-diagnosis.
 - **Limitations:** The application must not diagnose the cause of symptoms or replace emergency or professional medical services. NHS service references and emergency arrangements must not be presented as Nigerian service instructions.
-- **Source verification status:** Source identified and checked.
+- **Source verification status:** Sources identified and checked.
 - **Clinical review status:** Pending, including review of locally appropriate care-navigation wording.
 - **Implementation status:** Present in `js/content.js`; not clinically approved.
 
@@ -93,7 +97,7 @@ The following entries are research and evidence references. They are not current
 
 - **Source:** World Health Organization (WHO), _Guideline for the prevention, diagnosis and treatment of infertility_.
 - **Publication date:** 28 November 2025.
-- **URL:** [https://www.who.int/publications/i/item/9789240115774](https://www.who.int/publications/i/item/9789240115774)
+- **URL:** https://www.who.int/publications/i/item/9789240115774
 - **Source finding:** WHO defines infertility as a disease of the male or female reproductive system characterised by failure to achieve pregnancy after 12 months or more of regular unprotected sexual intercourse.
 - **Proposed user-facing wording:** "Infertility can involve male factors, female factors or unexplained circumstances. A digital questionnaire cannot determine whether an individual or couple has infertility."
 - **Intended use:** General education and explanation of the clinical definition.
@@ -105,49 +109,52 @@ The following entries are research and evidence references. They are not current
 ### CR-002 — Initial male fertility evaluation
 
 - **Source:** American Urological Association (AUA) and American Society for Reproductive Medicine (ASRM), _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
-- **Publication:** Guideline published in 2020; summary published in _Fertility and Sterility_ in 2021.
-- **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
+- **Publication:** Original guideline published in 2020; amended 2024.
+- **URL:** https://www.auanet.org/guidelines-and-quality/guidelines/male-infertility
 - **Source finding:** The guideline addresses male reproductive history, physical examination and diagnostic testing as part of the evaluation of an infertile couple. Semen analysis is an important component of this evaluation.
 - **Proposed user-facing wording:** "A healthcare professional can review relevant reproductive and medical history and determine whether semen analysis or other investigations are appropriate."
 - **Intended use:** Explain the purpose of professional assessment without ordering tests or interpreting individual results.
 - **Limitations:** ReproGuide must not prescribe investigations, diagnose a cause or independently determine which tests an individual requires.
-- **Source verification status:** Relevant guideline identified and checked.
+- **Source verification status:** Amended guideline identified and checked.
 - **Clinical review status:** Pending, including consideration of local clinical applicability.
 - **Implementation status:** Research reference; no personalised assessment or test-ordering functionality.
 
 ### CR-003 — Interpretation of semen analysis
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
-- **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
+- **Publication:** Original guideline published in 2020; amended 2024.
+- **URL:** https://www.auanet.org/guidelines-and-quality/guidelines/male-infertility
 - **Source finding:** Semen parameters vary. Individual semen parameters, considered in isolation, are generally not highly predictive of fertility or diagnostic of infertility.
 - **Proposed user-facing wording:** "Semen analysis is one part of a clinical assessment. Results need to be interpreted in context by a qualified healthcare professional."
 - **Intended use:** Discourage definitive conclusions based on an isolated laboratory value.
 - **Limitations:** The prototype must not calculate semen scores, interpret uploaded laboratory reports or predict fertility.
-- **Source verification status:** Relevant guideline finding identified and checked.
+- **Source verification status:** Amended guideline finding identified and checked.
 - **Clinical review status:** Pending.
 - **Implementation status:** General safety principle; no semen-analysis interpretation functionality.
 
 ### CR-004 — Reproductive history and associated factors
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part I_.
-- **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-auaasrm-guideline-part-i-2020/)
+- **Publication:** Original guideline published in 2020; amended 2024.
+- **URL:** https://www.auanet.org/guidelines-and-quality/guidelines/male-infertility
 - **Source finding:** Male reproductive evaluation considers relevant reproductive and medical history. Specific factors and their clinical significance require appropriate assessment.
 - **Proposed user-facing wording:** "Some medical conditions, medicines and exposures may be relevant to reproductive health. Their significance depends on the individual situation and may require professional review."
 - **Intended use:** Support preparation for a professional consultation.
 - **Limitations:** Do not assign a risk category from an isolated lifestyle response. Do not advise users to stop prescribed medication or start supplements.
-- **Source verification status:** General guideline identified; individual factor claims require separate evidence review.
+- **Source verification status:** Amended guideline identified; individual factor claims require separate evidence review.
 - **Clinical review status:** Pending.
 - **Implementation status:** Proposed; no individual risk rules approved.
 
 ### CR-005 — Treatment and supplements
 
 - **Source:** AUA/ASRM, _Diagnosis and Treatment of Infertility in Men: Guideline Part II_.
-- **URL:** [https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-aua-asrm-guideline-part2/](https://www.asrm.org/practice-guidance/practice-committee-documents/diagnosis-and-treatment-of-infertility-in-men-aua-asrm-guideline-part2/)
+- **Publication:** Original guideline published in 2020; amended 2024.
+- **URL:** https://www.auanet.org/guidelines-and-quality/guidelines/male-infertility
 - **Source finding:** The guideline describes the clinical utility of supplements such as antioxidants and vitamins for treating male infertility as questionable and states that evidence is inadequate to recommend specific agents.
 - **Proposed user-facing wording:** "Do not assume that fertility supplements are effective or appropriate for an individual. Discuss treatment-related questions with a qualified healthcare professional."
 - **Intended use:** Avoid unsupported treatment claims and encourage informed professional consultation.
 - **Limitations:** No supplement recommendations, medication dosing, prescriptions or treatment selection.
-- **Source verification status:** Relevant guideline statement identified and checked.
+- **Source verification status:** Amended guideline statement identified and checked.
 - **Clinical review status:** Pending.
 - **Implementation status:** Safety boundary only; treatment and supplement recommendations are not provided.
 
@@ -155,7 +162,7 @@ The following entries are research and evidence references. They are not current
 
 - **Source:** WHO, _Guideline for the prevention, diagnosis and treatment of infertility_.
 - **Publication date:** 28 November 2025.
-- **URL:** [https://www.who.int/publications/i/item/9789240115774](https://www.who.int/publications/i/item/9789240115774)
+- **URL:** https://www.who.int/publications/i/item/9789240115774
 - **Source finding:** The guideline provides evidence-based recommendations concerning infertility prevention, diagnosis and treatment. It is intended to support countries in adopting, adapting or updating national clinical guidance.
 - **Proposed user-facing wording:** No direct patient-facing recommendation is approved from this entry alone.
 - **Intended use:** Primary evidence source for future content review and clinical pathway development.
@@ -169,7 +176,7 @@ The following entries are research and evidence references. They are not current
 ### CR-007 — Privacy and reproductive health information
 
 - **Source:** Nigeria Data Protection Act 2023.
-- - - **Reference:** [Nigeria Data Protection Act 2023](https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf)
+- **Reference:** https://ndpc.gov.ng/wp-content/uploads/2024/03/Nigeria_Data_Protection_Act_2023.pdf
 - **Relevant provision:** The Act's definition of sensitive personal data includes information relating to an individual's health status and sex life.
 - **Intended use:** Inform privacy-by-design decisions and future review of the handling of reproductive health information.
 - **Proposed user-facing wording:** Any privacy notice must accurately describe the actual data collected, its purpose, where it is processed, whether it is retained or transmitted, and the user's available controls.
@@ -196,21 +203,22 @@ Source verification does not equal clinical approval.
 
 ## 6. Clinical and legal review log
 
-| Item                                        | Status                                           |
-| ------------------------------------------- | ------------------------------------------------ |
-| MedlinePlus male reproductive system source | Identified and checked                           |
-| NHS causes of infertility source            | Identified and checked                           |
-| NHS testicle lumps and swellings source     | Identified and checked                           |
-| WHO infertility guideline                   | Publication and definition checked               |
-| AUA/ASRM Part I                             | Guideline identified and checked                 |
-| AUA/ASRM Part II                            | Guideline identified and checked                 |
-| Nigeria Data Protection Act 2023            | Legislation identified; legal review outstanding |
-| Current application educational wording     | Clinical review outstanding                      |
-| Local care-navigation wording               | Clinical review outstanding                      |
-| Urgent escalation wording                   | Clinical and local pathway review outstanding    |
-| Personalised recommendation pathways        | Not approved; disabled                           |
-| Semen-analysis interpretation               | Not implemented                                  |
-| Treatment or supplement recommendations     | Not implemented                                  |
+| Item                                     | Status                                           |
+| ---------------------------------------- | ------------------------------------------------ |
+| MedlinePlus Sperm release pathway source | Identified and checked                           |
+| WHO infertility guideline                | Publication and purpose checked                  |
+| NHS testicle lumps and swellings source  | Identified and checked                           |
+| NHS testicle pain source                 | Identified and checked                           |
+| WHO infertility definition               | Publication and definition checked               |
+| AUA/ASRM amended 2024 guideline, Part I  | Guideline identified and checked                 |
+| AUA/ASRM amended 2024 guideline, Part II | Guideline identified and checked                 |
+| Nigeria Data Protection Act 2023         | Legislation identified; legal review outstanding |
+| Current application educational wording  | Clinical review outstanding                      |
+| Local care-navigation wording            | Clinical review outstanding                      |
+| Urgent escalation wording                | Clinical and local pathway review outstanding    |
+| Personalised recommendation pathways     | Not approved; disabled                           |
+| Semen-analysis interpretation            | Not implemented                                  |
+| Treatment or supplement recommendations  | Not implemented                                  |
 
 ## 7. Implementation and safety boundaries
 
@@ -235,3 +243,4 @@ Any future clinical content activation requires appropriate review, documented a
 
 - **Version 0.1 — 27 October 2026:** Initial evidence register prepared for prototype specification. No clinical reviewer approval claimed.
 - **Version 0.2 — 10 November 2026:** Register reorganised to distinguish current educational content from proposed evidence sources and privacy references. Implementation statuses and clinical review boundaries clarified. No clinical or legal approval claimed.
+- **Version 0.3 — 11 November 2026:** Updated application source attribution and educational wording for CR-008, CR-009 and CR-010. Updated AUA/ASRM references to the amended 2024 guideline and expanded the review log. No clinical or legal approval claimed.
