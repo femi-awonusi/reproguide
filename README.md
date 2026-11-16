@@ -4,6 +4,9 @@
 
 A privacy-conscious male reproductive health education and care-navigation prototype.
 
+- **Prototype:** https://femi-awonusi.github.io/reproguide/
+- **Source code:** https://github.com/femi-awonusi/reproguide
+
 ## 1. Overview
 
 ReproGuide is an educational and care-navigation prototype designed to help men move from uncertainty about reproductive health towards informed conversations with healthcare professionals.
@@ -142,7 +145,15 @@ npm test
 
 The test suite uses Node.js's built-in test runner and does not require additional test dependencies.
 
-## 8. Known Limitations
+## 8. Demonstration
+
+See [Demo Guide](docs/DEMO_GUIDE.md) for the suggested demonstration walkthrough.
+
+## 9. Challenge Traceability
+
+See [Challenge Traceability Matrix](docs/CHALLENGE_TRACEABILITY_MATRIX.md) for the mapping of project evidence against the challenge assessment areas.
+
+## 10. Known Limitations
 
 The current prototype has the following limitations:
 
@@ -154,7 +165,7 @@ The current prototype has the following limitations:
 - There is no backend, user account system, electronic health record integration or clinical monitoring service.
 - The prototype has not undergone clinical validation or a formal security audit.
 
-## 9. Development and Future Direction
+## 11. Development and Future Direction
 
 Future development is subject to clinical, technical, privacy and governance review.
 
@@ -169,7 +180,7 @@ Potential areas include:
 
 These are development objectives, not claims about existing functionality.
 
-## 10. Project Status
+## 12. Project Status
 
 **Status:** Working prototype under development.
 
