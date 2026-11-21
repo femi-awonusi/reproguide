@@ -1,0 +1,3 @@
+﻿Commit: 30172df7d604bf7b21f3ffccab4186919aa9f01b
+Subject: Add challenge traceability and demo documentation
+Date: 2026-11-16T11:03:49Z

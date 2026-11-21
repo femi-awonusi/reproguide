@@ -1,0 +1,35 @@
+﻿REPROGUIDE — FINAL SUBMISSION EVIDENCE
+Generated: 2026-11-18 08:49:25
+Live prototype: https://femi-awonusi.github.io/reproguide/
+Repository: https://github.com/femi-awonusi/reproguide
+Branch: main
+Latest commit: 30172df
+
+REQUIRED FILES
+PRESENT: submission-evidence\01-welcome.png
+PRESENT: submission-evidence\02-education.png
+PRESENT: submission-evidence\03-consultation-preparation.png
+PRESENT: submission-evidence\04-selection-summary.png
+PRESENT: submission-evidence\05-guided-check-in-disabled.png
+PRESENT: submission-evidence\06-automated-tests.png
+PRESENT: submission-evidence\automated-test-results.txt
+PRESENT: submission-evidence\latest-commit.txt
+PRESENT: submission-evidence\repository-status.txt
+PRESENT: submission-evidence\submission-details.txt
+PRESENT: submission-evidence\documentation-inventory.txt
+PRESENT: README.md
+PRESENT: docs/CHALLENGE_TRACEABILITY_MATRIX.md
+PRESENT: docs/DEMO_GUIDE.md
+PRESENT: docs/APP_ARCHITECTURE.md
+PRESENT: docs/ASSESSMENT_DATA_MODEL.md
+PRESENT: docs/PRIVACY_AND_SAFETY.md
+PRESENT: docs/CLINICAL_CONTENT_REGISTER.md
+
+AUTOMATED TESTS
+Previously verified: 24 passed, 0 failed.
+
+CLINICAL AND SAFETY LIMITATIONS
+Educational content remains pending clinical review.
+No AI model or external AI service is implemented.
+Personalised clinical guidance remains disabled.
+No clinical validation or formal security audit is claimed.
